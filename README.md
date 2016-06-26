@@ -1,11 +1,11 @@
 # pheno
 
-> :snowflake: A collection of micro-standards and conventions for supporting i10n and i18n
+> :snowflake: A collection of micro-standards and conventions for supporting l10n and i18n
 
 ---
 
 As SaaS continues to grow on the web, the needs of these applications in
-terms of locationalization (i10n) and internationalization (i18n) have grown
+terms of locationalization (l10n) and internationalization (i18n) have grown
 beyond the capabilities of `gettext`, the defacto industry standard.
 
 `gettext` is a simple specification for supporting translations and alternative
@@ -23,12 +23,12 @@ where it falls short and to help developers achieve l10n/i18n zen.
 Supporting internationalization and localization in an application is manageable
 with the right architecture, and it is always easier to integrate sooner than later.
 
-The majority of open-source efforts towards i10n/i8n have more or less converged into
+The majority of open-source efforts towards l10n/i8n have more or less converged into
 `gettext`, and thus the focus has generally been on **text and content** rather than
 **context, functionality, behavior, and architecture**.
 
 The following contains a categorized summarization of architectual and design considerations 
-to make when developing i10n/18n applications, many of which `gettext` cannot address on its own:
+to make when developing l10n/18n applications, many of which `gettext` cannot address on its own:
 
 ### Encapsulation
 
@@ -51,7 +51,7 @@ In general, an excessive amount of transparency can make essential data impossib
 
 ## Deployment
 
-There are several considerations to make when designing a deployment architecture for an i10n/i18n application.
+There are several considerations to make when designing a deployment architecture for an l10n/i18n application.
 
  * Role of the build step
  * Packaging technique of localized/organization-specific builds
@@ -60,7 +60,7 @@ There are several considerations to make when designing a deployment architectur
 
 ## Features
 
-Certain features often apply in one localized context but not another. Minimizing the invasiveness of i10n/i18 related code (and thus increasing modularization)
+Certain features often apply in one localized context but not another. Minimizing the invasiveness of l10n/i18 related code (and thus increasing modularization)
 is often a difficult task, particularly for those concerned with keeping code clean and free of awkward control flow structures.
 
 ## Presentation
