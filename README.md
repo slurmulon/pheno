@@ -65,7 +65,7 @@ is often a difficult task, particularly for those concerned with keeping code cl
 
 ## Presentation
 
-`gettext` does an excellent job of helping to support plural pronounciations, right-to-left languages, and of course localized content based on a user's internationalization profile.
+`gettext` does an excellent job of helping to support plural pronounciations, right-to-left languages, and of course localized content based on a user's internationalization profile. However, it rightfully doesn't specify anything regarding the more _stylistic_ aspects of the content.
 
 It is not uncommon for locales to correlate with another company branch or partner organization. SaaS companies have begun to offer "home-cooked" versions of their client application for customers, and the more gracefully an application can adapt to the individual requirements of each customer or partner organization the better.
 
