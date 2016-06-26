@@ -1,6 +1,8 @@
 # pheno
 
-> :snowflake: A collection of micro-standards for supporting i10n and i18n
+> :snowflake: A collection of micro-standards and conventions for supporting i10n and i18n
+
+---
 
 As SaaS continues to grow on the web, the needs of these applications in
 terms of locationalization (i10n) and internationalization (i18n) have grown
