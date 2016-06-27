@@ -73,9 +73,15 @@ It is not uncommon for locales to correlate with another company branch or partn
 
 ## Conventions
 
-TODO
+### Build Step
 
- - [ ] Build technique you can use to quickly increase architectual flexibility.
+Pre-processing code allows you to work in an abstracted layer of transparency that favors environment-specific or partner-specific logic. Modern applications using `gettext` often incorporate some sort of build step that packages/compiles translations or exports a subset of translations for a certain deployment.
+
+In dynamic ecosystems such as JavaScript, the build step can be immensely powerful for customizing run-time functionality that applies only a specific partner, organization, locale, etc. We shall call this *-specific functionality. The primary benefit is that your code can be remain as agnostic to meta-information as possible, which leads to fewer concerns, greater encapsulation and less complexity.
+
+An effective but admittedly non-DRY solution for *-specific functionality is using a simple directory convention that outlines inheritance:
+
+TODO: directory tree diagram
 
 ## Specifications
 
