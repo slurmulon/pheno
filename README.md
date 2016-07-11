@@ -40,7 +40,7 @@ Business logic, modules and configuration related to internationalization or loc
 
 ### Reusability
 
-Localized components should be able to inherit or compose re-usable units of common logic
+Localized components should be able to inherit or compose re-usable units of common logic.
 
 ### Transparency
 
@@ -81,7 +81,41 @@ In dynamic ecosystems such as JavaScript, the build step can be immensely powerf
 
 An effective but admittedly non-DRY solution for *-specific functionality is using a simple directory convention that outlines inheritance:
 
-TODO: directory tree diagram
+.
+└── src
+    ├── feature-a
+    ├── feature-b
+    │   └── partner-b
+    ├── index.js
+    └── partner-a
+        ├── feature-a
+        └── index.js
+
+The names of each directory are pretty arbitrary, but the pattern that they follow is important.
+
+The default implementation of any script or feature lives wherever you would normally define it,
+in something like `src` or `src/feature-a`.
+
+Alternative implementations of scripts or features are defined as a sub-directory in the module
+or directory that contains the default implementation. Take for example `partner-a`, an organization
+which requires unique implementations of both the base `src/index.js` file and `src/feature-a`. Also, `partner-b` requires a custom implementation of `feature-b`.
+
+So how does it come together?
+
+Quite simply. The build step is responsible for performing a unification of the code through the following process:
+
+1. Transpile or duplicate default implementation scripts to an output directory such as `dist` for each partner or organization
+2. Transpiling or duplication partner-specific implementation scripts to the SAME output directory, but flattening the output paths such that the default implementation scripts are **completely squashed** with the partner-specific scripts
+
+Tools such as `glob` eliminate the need for complex recursive searches. Here is a potential mapping of source to destination patterns:
+
+| Source                   | Destination  |   |   |   |
+|--------------------------|--------------|---|---|---|
+| src/**/!(partner_a)/*.js | dist/**/*.js |   |   |   |
+| src/**/partner_a/*.js    | dist/**/*.js |   |   |   |
+
+
+This convention ultimately requires a fine level of modularization and encapsulation in order to be successful and minimize duplication.
 
 ## Specifications
 
