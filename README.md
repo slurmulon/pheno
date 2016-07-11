@@ -81,6 +81,7 @@ In dynamic ecosystems such as JavaScript, the build step can be immensely powerf
 
 An effective but admittedly non-DRY solution for *-specific functionality is using a simple directory convention that outlines inheritance:
 
+```
 .
 └── src
     ├── feature-a
@@ -90,6 +91,7 @@ An effective but admittedly non-DRY solution for *-specific functionality is usi
     └── partner-a
         ├── feature-a
         └── index.js
+```
 
 The names of each directory are pretty arbitrary, but the pattern that they follow is important.
 
@@ -109,11 +111,10 @@ Quite simply. The build step is responsible for performing a unification of the 
 
 Tools such as `glob` eliminate the need for complex recursive searches. Here is a potential mapping of source to destination patterns:
 
-| Source                   | Destination  |   |   |   |
-|--------------------------|--------------|---|---|---|
-| src/**/!(partner_a)/*.js | dist/**/*.js |   |   |   |
-| src/**/partner_a/*.js    | dist/**/*.js |   |   |   |
-
+| Source                   | Destination  |
+|--------------------------|--------------|
+| src/**/!(partner_a)/*.js | dist/**/*.js |
+| src/**/partner_a/*.js    | dist/**/*.js |
 
 This convention ultimately requires a fine level of modularization and encapsulation in order to be successful and minimize duplication.
 
