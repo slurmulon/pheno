@@ -107,7 +107,7 @@ So how does it come together?
 Quite simply. The build step is responsible for performing a unification of the code through the following process:
 
 1. Transpile or duplicate default implementation scripts to an output directory such as `dist` for each partner or organization
-2. Transpiling or duplication partner-specific implementation scripts to the SAME output directory, but flattening the output paths such that the default implementation scripts are **completely squashed** with the partner-specific scripts
+2. Transpile or duplicate partner-specific implementation scripts to the **same** output directory, but flattening the output paths such that the default implementation scripts are **completely overwritten** with the partner-specific scripts
 
 Tools such as `glob` eliminate the need for complex recursive searches. Here is a potential mapping of source to destination patterns:
 
