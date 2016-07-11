@@ -111,10 +111,10 @@ Quite simply. The build step is responsible for performing a unification of the 
 
 Tools such as `glob` eliminate the need for complex recursive searches. Here is a potential mapping of source to destination patterns:
 
-| Source                   | Destination  |
-|--------------------------|--------------|
-| src/**/!(partner_a)/*.js | dist/**/*.js |
-| src/**/partner_a/*.js    | dist/**/*.js |
+| Source                     | Destination    |
+|----------------------------|----------------|
+| `src/**/!(partner_a)/*.js` | `dist/**/*.js` |
+| `src/**/partner_a/*.js`    | `dist/**/*.js` |
 
 This convention ultimately requires a fine level of modularization and encapsulation in order to be successful and minimize duplication.
 
